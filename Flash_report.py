@@ -3,8 +3,12 @@ import urllib2
 import re
 from lxml import html
 f = open('Flash_Final.txt','w+')
-f.write("School_name#development_region#Eco_Belt#Zone#District#VDC#Address#Ward_No#Locality#ECD#PRIMARY#LSEC#SEC#HSEC\n")
+f.write("School_code#School_name#development_region#Eco_Belt#Zone#District#VDC#Address#Ward_No#Locality#ECD#PRIMARY#LSEC#SEC#HSEC\n")
 def general_information(tbl):
+    try:
+        School_code=subroot.xpath('/html/body/table['+tbl.__str__()+']/tr/td/table[1]/tr/td[2]/h2/text()')
+    except:
+        School_code=""
     try:
         School_name=subroot.xpath('/html/body/table['+tbl.__str__()+']/tr/td/table[1]/tr/td[2]/h2/text()')
     except:
@@ -41,7 +45,7 @@ def general_information(tbl):
         Locality=subroot.xpath('/html/body/table['+tbl.__str__()+']/tr/td/table[2]/tr/td[1]/table/tr[10]/td/text()')[2].split()[-1]
     except:
         Locality=""
-    return School_name[0][8:]+"#"+development_region+"#"+Eco_Belt+"#"+Zone+"#"+District+"#"+VDC+"#"+Address+"#"+Ward_No+"#"+Locality
+    return School_code[1][7:]+"#"+School_name[0][8:]+"#"+development_region+"#"+Eco_Belt+"#"+Zone+"#"+District+"#"+VDC+"#"+Address+"#"+Ward_No+"#"+Locality
 def school_type(tbl,col):
     try:
         Community_aided=subroot.xpath("/html/body/table["+tbl.__str__()+"]/tr/td/table[2]/tr/td[3]/table/tr[3]/td["+col.__str__()+"]/img['src']")[-1]
