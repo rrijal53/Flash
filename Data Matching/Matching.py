@@ -1,47 +1,30 @@
-from xlrd import open_workbook
-import xlwt
+import os
 import re
-book=xlwt.Workbook()
-sh=book.add_sheet("Test")
-i=0
-j=0
-a=0
-slc = open_workbook('SLC_Data.xlsx',on_demand=True)
-flash= open_workbook('Flash_Report.xlsx',on_demand=True)
-slc_sheet = slc.sheet_by_name("Sheet1")
-flash_sheet = flash.sheet_by_name("Sheet1")
-for cell in slc_sheet.col(4): 
-	i+=1
-	j=0
-     	for cellf in flash_sheet.col(1):
-     		aa=cellf.value
-     		j+=1
-     		try:
-	     		if re.match(aa, cell.value):
-	     			#print "name match "+cell.value+" = "+aa
-	     			district_flash=flash_sheet.col(5)[j].value
-	     			district_slc=slc_sheet.col(1)[i].value
-	     			if re.match(district_flash,district_slc):
-	     				print "District Match"
-	     				print cell.value+"  "+district_flash+"="+cellf.value+","+district_slc
-	     				try:
-	     					Address_slc=cell.value.split("Vi ")[1]
-	     				except:
-	     					print "Address chhaina"
-	     				Address_flash=flash_sheet.col(6)[j].value
-	     				if re.match(Address_flash,Address_slc):
-	     					print "Address match"
-	     					print cell.value+"="+cellf.value+" "+flash_sheet.col(5)[j].value+" "+Address_flash[1]
-	     					sh.write(a,b,cell.value)
-	     					sh.write(a+1,b,cellf.value)
-	     					a+=1
-	     			'''if flash_sheet.col(5)[j].value==slc_sheet.col(1)[i].value:
-	     				print "district match"
-	     				address=cell.value.split("Vi ")
-	     				if address[1]== flash_sheet.col(7)[j].value:
-	     					print "Address match"
-	     					print cell.value+"="+cellf.value+" "+flash_sheet.col(5)[j].value+" "+address[1]'''
-	     	except:
-	     		print "something went wrong"				
-
-book.save("Test.xls")
+flash_csv="Flash_Report.csv"
+slc_csv="SLC_Data.csv"
+import csv
+f=open("text.txt","w+")
+f.write("School_code#School_name#development_region#Eco_Belt#Zone#District#VDC#Address#Ward_No#Locality#ECD#PRIMARY#LSEC#SEC#HSEC#SLCYear#DistrictName#DistrictCode#SCHCODE#School_Name#AppearedTotal#AppearedBoys#AppearedGirls#PassTotal#PassBoys#PassGirls#Percentage#DivisionBoys#DivisionGirls#FirstDivBoys#FirstDivGirls#SecondDivBoys#SecondDivGirls#ThirdDivBoys#ThirdDivGirls#WithheldBoys#WithheldGirls#CanceledBoys#CanceledGirls#ExpelledBoys#ExpelledGirls#\n")
+with open(flash_csv) as csvfile:
+  reader = csv.DictReader(csvfile)
+  for row in reader:
+      try:
+         flash_name=row['School_name']
+         flash_district_name=row['District']
+         flash_vdc=row['VDC']
+         with open(slc_csv) as csvfile:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                 slc_name=row['School_name']
+                 slc_district_name=row['DistrictName']
+                 try:
+                    slc_vdc=slc_name.split("Vi ")[1]
+                 except:
+                    slc_vdc=None
+                 if re.match(flash_name,slc_name):
+                    if re.match(flash_district_name,slc_district_name):
+                      if re.match(flash_vdc,slc_vdc):
+                        print flash_name+"="+slc_name
+      except:
+          continue
+#os.system("grep -E '"++"' SLC_Data.csv")
