@@ -1,7 +1,7 @@
 import os
 import re
-flash_header=["School_code","School_name","development_region","Eco_Belt","Zone","District","VDC","Address","Ward_No","Locality","ECD","PRIMARY","LSEC","SEC","HSEC"]
-slc_header=["SLCYear","DistrictName","DistrictCode","SCHCODE","School_name","AppearedTotal","AppearedBoys","AppearedGirls","PassTotal","PassBoys","PassGirls","%","DivisionBoys","DivisionGirls","FirstDivBoys","FirstDivGirls","SecondDivBoys","SecondDivGirls","ThirdDivBoys","ThirdDivGirls","WithheldBoys","WithheldGirls","CanceledBoys","CanceledGirls","ExpelledBoys","ExpelledGirls"]
+#flash_header=["School_code","School_name","development_region","Eco_Belt","Zone","District","VDC","Address","Ward_No","Locality","ECD","PRIMARY","LSEC","SEC","HSEC"]
+#slc_header=["SLCYear","DistrictName","DistrictCode","SCHCODE","School_name","AppearedTotal","AppearedBoys","AppearedGirls","PassTotal","PassBoys","PassGirls","%","DivisionBoys","DivisionGirls","FirstDivBoys","FirstDivGirls","SecondDivBoys","SecondDivGirls","ThirdDivBoys","ThirdDivGirls","WithheldBoys","WithheldGirls","CanceledBoys","CanceledGirls","ExpelledBoys","ExpelledGirls"]
 flash_csv="Flash_Report.csv"
 slc_csv="SLC_Data.csv"
 import csv
