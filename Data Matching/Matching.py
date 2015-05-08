@@ -5,7 +5,7 @@ slc_header=["SLCYear","DistrictName","DistrictCode","SCHCODE","School_name","App
 flash_csv="Flash_Report.csv"
 slc_csv="SLC_Data.csv"
 import csv
-f=open("text.txt","w+")
+f=open("test.txt","w+")
 f.write("School_code#School_name#development_region#Eco_Belt#Zone#District#VDC#Address#Ward_No#Locality#ECD#PRIMARY#LSEC#SEC#HSEC#SLCYear#DistrictName#DistrictCode#SCHCODE#School_Name#AppearedTotal#AppearedBoys#AppearedGirls#PassTotal#PassBoys#PassGirls#Percentage#DivisionBoys#DivisionGirls#FirstDivBoys#FirstDivGirls#SecondDivBoys#SecondDivGirls#ThirdDivBoys#ThirdDivGirls#WithheldBoys#WithheldGirls#CanceledBoys#CanceledGirls#ExpelledBoys#ExpelledGirls#\n")
 with open(flash_csv) as csvfile:
   flash_reader = csv.DictReader(csvfile)

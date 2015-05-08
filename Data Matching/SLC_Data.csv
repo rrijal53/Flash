@@ -1,4 +1,4 @@
-SLCYear,DistrictName,DistrictCode,SCHCODE,School_name,AppearedTotal,AppearedBoys,AppearedGirls,PassTotal,PassBoys,PassGirls,%,DivisionBoys,DivisionGirls,FirstDivBoys,FirstDivGirls,SecondDivBoys,SecondDivGirls,ThirdDivBoys,ThirdDivGirls,WithheldBoys,WithheldGirls,CanceledBoys,CanceledGirls,ExpelledBoys,ExpelledGirls
+SLCYear,DistrictName,DistrictCode,SCHCODE,School_name,AppearedTotal,AppearedBoys,AppearedGirls,PassTotal,PassBoys,PassGirls,Percentage,DivisionBoys,DivisionGirls,FirstDivBoys,FirstDivGirls,SecondDivBoys,SecondDivGirls,ThirdDivBoys,ThirdDivGirls,WithheldBoys,WithheldGirls,CanceledBoys,CanceledGirls,ExpelledBoys,ExpelledGirls
 69,Taplejung,1,1002,"Bhanu Jana Higher Secondary School, Ambitar",82,32,50,9,7,2,10.98,0,0,4,1,2,1,1,0,1,0,0,0,0,0
 69,Taplejung,1,1003,Moti Ma Vi Khokling,80,37,43,54,25,29,67.5,0,0,2,9,19,17,4,3,0,0,0,0,0,0
 69,Taplejung,1,1004,Sinam Ma Vi Sinam,59,26,33,6,2,4,10.17,0,0,0,0,2,2,0,2,0,0,0,0,0,0
