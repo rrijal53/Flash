@@ -3,8 +3,8 @@ import csv
 import re
 f=open("Flash_data_secondary.txt","w+")
 flash_csv="Flash_Report.csv"
-flash_header=["School_code","School_name","development_region","Eco_Belt","Zone","District","VDC","Address","Ward_No","Locality","ECD","PRIMARY","LSEC","SEC","HSEC"]
-for row in flash_header:
+slc_header=["SLCYear","DistrictName","DistrictCode","SCHCODE","School_name","AppearedTotal","AppearedBoys","AppearedGirls","PassTotal","PassBoys","PassGirls","%","DivisionBoys","DivisionGirls","FirstDivBoys","FirstDivGirls","SecondDivBoys","SecondDivGirls","ThirdDivBoys","ThirdDivGirls","WithheldBoys","WithheldGirls","CanceledBoys","CanceledGirls","ExpelledBoys","ExpelledGirls"]
+for row in slc_header:
     f.write(row+"#")
 f.write("\n")
 with open(flash_csv) as csvfile:
